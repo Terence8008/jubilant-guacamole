@@ -21,48 +21,104 @@
   </head>
  
   <body>
-    <section class ="section-1">
-    </section>
-    <section class ="section-2">
-      <div>
-        <p style="text-align: center;">Hayama in Action </p>
-        <div class="absolute inset-4 ">
-          <div class="center-div">
-            <iframe
-              style="border: none;"
-              srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v1/inject.js'></script>
-              <script>
-                window.botpressWebChat.init({
-                    'composerPlaceholder': 'Chat with bot',
-                    'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
-                    'botName': 'Hayama',
-                    'avatarUrl': 'https://i.ibb.co/WfVJzKL/Kendang-Avatar.png',
-                    'botId': 'ffade8c8-8488-4234-bb26-e00f8798e845',
-                    'hostUrl': 'https://cdn.botpress.cloud/webchat/v1',
-                    'messagingUrl': 'https://messaging.botpress.cloud',
-                    'clientId': 'ffade8c8-8488-4234-bb26-e00f8798e845',
-                    'enableConversationDeletion': true,
-                    'showPoweredBy': true,
-                    'className': 'webchatIframe',
-                    'containerWidth': '100%25',
-                    'layoutWidth': '100%25',
-                    'hideWidget': true,
-                    'showCloseButton': false,
-                    'disableAnimations': false,
-                    'closeOnEscape': false,
-                    'showConversationsButton': true,
-                    'enableTranscriptDownload': false,
-                    'stylesheet':'https://webchat-styler-css.botpress.app/prod/a1e5167a-0752-40ab-b3f7-581fd8f01e82/v76088/style.css'
-                    
-                });
-              window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
-              </script></body>"
-              width="100%"
-              height="100%"
-            ></iframe>
+      <section class="section-1">
+          <!-- Slideshow container -->
+          <div class="slideshow-container">
+
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="K Image 1.jpg" style="width:100%">
+                  <div class="text">Caption Text</div>
+              </div>
+
+              <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="K Image 2.jpg" style="width:100%">
+                  <div class="text">Caption Two</div>
+              </div>
+
+              <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="K Image 3.jpg" style="width:100%">
+                  <div class="text">Caption Three</div>
+              </div>
+
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
-        </div>
-      </div>
-    </section>
+          <br>
+
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+          <script>
+              let slideIndex = 1;
+              showSlides(slideIndex);
+
+              function plusSlides(n) {
+                  showSlides(slideIndex += n);
+              }
+
+              function currentSlide(n) {
+                  showSlides(slideIndex = n);
+              }
+
+              function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) { slideIndex = 1 }
+                  if (n < 1) { slideIndex = slides.length }
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex - 1].style.display = "block";
+                  dots[slideIndex - 1].className += " active";
+              }
+          </script>
+          <div>
+              <p style="text-align: center;">Hayama in Action </p>
+              <div class="absolute inset-4 ">
+                  <iframe style="border: none; position: fixed;"
+                          srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v1/inject.js'></script>
+            <script>
+            window.botpressWebChat.init({
+            'composerPlaceholder': 'Chat with bot',
+            'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
+            'botName': 'Hayama',
+            'avatarUrl': 'https://i.ibb.co/WfVJzKL/Kendang-Avatar.png',
+            'botId': 'ffade8c8-8488-4234-bb26-e00f8798e845',
+            'hostUrl': 'https://cdn.botpress.cloud/webchat/v1',
+            'messagingUrl': 'https://messaging.botpress.cloud',
+            'clientId': 'ffade8c8-8488-4234-bb26-e00f8798e845',
+            'enableConversationDeletion': true,
+            'showPoweredBy': true,
+            'className': 'webchatIframe',
+            'containerWidth': '100%25',
+            'layoutWidth': '100%25',
+            'hideWidget': true,
+            'showCloseButton': false,
+            'disableAnimations': false,
+            'closeOnEscape': false,
+            'showConversationsButton': true,
+            'enableTranscriptDownload': false,
+                'stylesheet': 'https://webchat-styler-css.botpress.app/prod/code/07ac4cef-5c2a-4ad7-acf4-e0d5c59f059e/v94953/style.css'
+            });
+            window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+            </script></body>"
+            width="100%"
+            height="100%"
+            ></iframe>
+              </div>
+          </div>
+      </section>
   </body>
 </html>
