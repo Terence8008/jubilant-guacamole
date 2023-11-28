@@ -1,7 +1,7 @@
 .section-1{
     width:60%;
     height:100%;
-    background-color: #ece6ef;
+    background-color: #ece6ef   ;
     background-size:100% 100% ;
 }
 
@@ -11,6 +11,18 @@
     background-color: #000f;
     background-size:100% 100% ;
     z-index: 1;
+}
+
+.header {
+  position:absolute;
+  top:0;
+  width:100%;
+  padding-top: 10px;
+  text-align: center;
+  background: #000000;
+  color: white;
+  font-size: 10px;
+  z-index: 2;
 }
 
 .center-div {
